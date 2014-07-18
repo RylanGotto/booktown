@@ -1,11 +1,73 @@
-    body {
-        padding-top: 100px;
-        font-family:freemono;
-        padding-bottom:50px;
-        font-size: 12pt;
+    {% load staticfiles %}
+
+    html{
+      font-family: 'Open Sans Condensed', sans-serif;
     }
+    body{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 15px;
+        margin-bottom: 150px;
+
+    }
+    h1{
+        font-family: 'Special Elite', cursive;
+        font-size: 50px;
+    }
+
+    h2{
+
+        font-size:40px;
+        padding-top:2px;
+        padding-bottom:2px;
+    }
+    h3{
+        font-size:20px;
+        font-family: 'Special Elite', cursive;
+        padding-bottom:3px;
+    }
+    .search_divs{
+      font-family: 'Open Sans Condensed', sans-serif;
+      padding-top: 10px;
+    }
+
+  .navbar-inverse .navbar-nav > li > a {
+      color: yellow;
+  }
+
+
     .btn{
-    	margin-top: 5px;
+       border-top: 1px solid #96d1f8;
+       background: #65a9d7;
+       background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+       background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+       background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+       background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+       background: -o-linear-gradient(top, #3e779d, #65a9d7);
+       padding: 6px 12px;
+       margin:12px;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 8px;
+       border-radius: 8px;
+       -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+       -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+       box-shadow: rgba(0,0,0,1) 0 1px 0;
+       text-shadow: rgba(0,0,0,.4) 0 1px 0;
+       color: yellow;
+       font-size: 14px;
+       font-family: 'Special Elite', cursive;
+       text-decoration: none;
+       vertical-align: middle;
+       }
+    .btn:hover {
+       border-top-color: #28597a;
+       background: #28597a;
+       color: #ccc;
+       }
+    .btn:active {
+       border-top-color: #1b435e;
+       background: #1b435e;
+       }
+
     }
     .jumbotron{
         background-image:url('images/backdrop.jpg');
@@ -20,7 +82,10 @@
         color:white;
     }
     .contact h3{
-        color:#B5E853;
+        color:#B5E853
+    }
+    #welcome{
+      margin-top: 100px
     }
 
     #social{
@@ -46,11 +111,13 @@
         margin:10px;
     }
     #footer{
-        border-top:1pt solid #BFBFBF;
-        background-color: #D1D1D1;
+        border-top:1pt solid yellow;
+        background-color: black;
+        font-size:25px;
     }
     #blog_desc{
         border-bottom: 1pt #D1D1D1 solid;
         margin-bottom: 45px;
     }
+
 

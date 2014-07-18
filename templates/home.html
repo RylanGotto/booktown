@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 
 {% block css %}
-h1 {
-	margin-top: 60px;
-}
+
 {% endblock css %}
 
 
 {% block headline %}
 {% if user.is_authenticated %}
-<h1>Profile for {{user}}</h1>
-<h1>Words and things</h1>
+<div id='welcome'>
+	<h1>Welcome, {{user}}</h1>
+	<p>Use the navigation at the top right-hand corner of the screen to move around book town. <br>
+	<img src= 'http://localhost/book-town.jpg' />
+	</p>
+</div>
+
 {% else %}
 <h1>Please register or sign in</h1>
 {% endif %}

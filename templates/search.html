@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block css %}
 
 #search{
@@ -13,9 +13,13 @@
 {% if user.is_authenticated %}
 <div class="container" id="search">
 	<div id="greeting">
-		<p><h1>Greetings!<br> Welcome to the wicked book search engine</h1><br>
+	<img src="{% static 'images/book.png' %}" alt="book" height='175'/>
+
+		<h1>Greetings!<br></h1><h2> Welcome to the wicked book search engine
+		</h2><br>
+		<h3>
 		Please enter your search terms and we will return some wicked books
-		</p> 
+		</h3> 
 	</div>
 
 </div>
@@ -24,7 +28,7 @@
 		<form class="search_form" name="input" action="/results/" method="get">
 		<input type="hidden" name="type_is" value="1">
 
-			<div class="ui-widget">
+			<div class="ui-widget" style="margin-top:2em; font-family: 'Open Sans Condensed', sans-serif">
 			<label for="tit">Title: </label>
 			<input id="tit">
 		
@@ -35,7 +39,7 @@
 			<input id="pub">
 			</div>
 
-		<div class="ui-widget" style="margin-top:2em; font-family:Arial">
+		<div class="ui-widget" style="margin-top:2em; font-family: 'Special Elite', cursive;">
 		Result:
 		<div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
 </div>
@@ -59,7 +63,7 @@
 		<form class="search_form" name="luckysearch" action="/results/" method="get">	
 		<input type="hidden" name="type_is" value="3">
 		<legend>Feelin lucky? </legend>
-			<input type="submit" value="Find it!" name="lucky" class="btn btn-primary">
+			<input type="submit" value="Get random book" name="lucky" class="btn btn-primary">
 		</form> 
 	</div>
 
