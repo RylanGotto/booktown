@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block css %}
+#book_form{
+	margin-top:70px;
+}
+{% endblock css %}
+
+{% block headline %}
+{% endblock headline %}
+
+
+
+
+{% block content %}
+<form id="book_form" method="post" action="/add_book/"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{book_form.as_p}}
+            <p>
+            <lable for="id_editor_name">Editor Name: </lable>
+            {{editor_form.editor_name}}
+            </p>
+            <p>
+            <lable for="id_publisher">Publisher: </lable>
+            {{edition_form.publisher}}
+            </p>
+            <p>
+            <lable for="id_pub_date">Date Published: </lable>
+            {{edition_form.pub_date}}
+            </p>
+            <p>
+            <lable for="id_language">Langgaue: </lable>
+            {{edition_form.language}}
+            </p>
+            <p>
+            <lable for="id_isbn">ISBN: </lable>
+            {{edition_form.isbn}}
+            </p>
+            {{edition.author_id}}
+            {{author_form.as_p}}
+            <lable for="id_genre">Genre: </lable>
+            {{bookg_form.genre}}
+
+<input type="submit" name="submit" value="submit" class="btn btn-default" />
+</form>
+
+{% endblock content %}

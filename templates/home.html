@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block css %}
+h1 {
+	margin-top: 60px;
+}
+{% endblock css %}
+
+
+{% block headline %}
+{% if user.is_authenticated %}
+<h1>Profile for {{user}}</h1>
+<h1>Words and things</h1>
+{% else %}
+<h1>Please register or sign in</h1>
+{% endif %}
+{% endblock headline %}
+
+
+
+
+{% block content %}
+
+{% endblock content %}

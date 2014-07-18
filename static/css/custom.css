@@ -1,0 +1,56 @@
+    body {
+        padding-top: 100px;
+        font-family:freemono;
+        padding-bottom:50px;
+        font-size: 12pt;
+    }
+    .btn{
+    	margin-top: 5px;
+    }
+    .jumbotron{
+        background-image:url('images/backdrop.jpg');
+        border: 1pt #D1D1D1 solid;
+    }
+    .wrapper{
+        padding-bottom:15px;
+    }
+    .contact{
+        border-radius: 10px;
+        background-color:rgba(0,0,0,0.1);
+        color:white;
+    }
+    .contact h3{
+        color:#B5E853;
+    }
+
+    #social{
+        list-style-type:none;
+        font-size:15pt;
+    }
+    #contact_form input{
+        color:black;
+    }
+    #submit{
+        margin-bottom: 10px;
+    }
+    #contact_form label{
+        color:#B5E853;
+    }
+    #id_message{
+        color:black;
+    }
+    #intro{
+        color:white;
+    }
+    #login{
+        margin:10px;
+    }
+    #footer{
+        border-top:1pt solid #BFBFBF;
+        background-color: #D1D1D1;
+    }
+    #blog_desc{
+        border-bottom: 1pt #D1D1D1 solid;
+        margin-bottom: 45px;
+    }
+
