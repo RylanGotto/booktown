@@ -1,0 +1,172 @@
+from django.shortcuts import render
+from django.contrib.auth.models import Group, User
+from models import Book
+import queryfuncs as qf
+import loaddb as ldb
+from django.shortcuts import render
+from book_search.models import BookGenre
+import queryfuncs as qf
+from forms import *
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.decorators import login_required
+from models import *
+
+import logging
+import json
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s %(levelname)-8s %(message)s',
+                    datefmt='%a, %d %b %Y %H:%M:%S',
+                    filename='book.log',
+                    filemode='a')
+
+def get_account(requests):
+	u = User.objects.all()
+	d= {}
+	for num, obj in enumerate(u):
+		d.update({num:{'fname':obj.first_name,'lname':obj.last_name,'username':obj.username}})
+	data = json.dumps(d)
+	return HttpResponse(data, mimetype='application/json')
+
+
+
+# Create your views here.
+def home(request):
+	return render(request, 'home.html', {})
+
+
+def results(request):
+	if request.GET['type_is'] == "1":
+		term = request.GET['term']
+		search = request.GET['various']
+		if request.GET['term'] == "Author":
+			return render(request, 'results.html', {'result':qf.search_author(request.GET['various']),'term':term, 'search':search})
+		elif request.GET['term'] == "Title":
+			return render(request, 'results.html', {'result':qf.search_title(request.GET['various']),'term':term, 'search':search})
+		elif request.GET['term'] == "Publisher":
+			return render(request, 'results.html', {'result':qf.search_pub(request.GET['various']),'term':term, 'search':search})
+	elif request.GET['type_is'] == "2":
+		return render(request, 'results.html', {'result':qf.search_genre(request.GET['genre']), 'genre':request.GET['genre']})
+	elif request.GET['type_is'] == "3":
+		return render(request, 'results.html', {'result':qf.feeling_lucky(), 'lucky':request.GET['lucky']})
+
+def search(request):
+	user_form = UserForm()
+	genres = BookGenre.objects.values('genre').distinct()
+	return render(request, 'search.html', { 'genrelist': genres, 'user_form': user_form})
+
+
+
+def autocomplete(request):
+    if request.is_ajax():
+        q = request.GET['term']
+        drugs = Book.objects.filter(title__icontains = q )[:20]
+        results = []
+        for drug in drugs:
+            drug_json = {}
+            drug_json['id'] = drug.book_id
+            drug_json['label'] = drug.title
+            drug_json['value'] = drug.title
+
+            results.append(drug_json)
+        data = json.dumps(results)
+    else:
+        data = 'fail'
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)
+
+
+
+def add_book(request):
+	if request.method == 'POST':
+
+		try:
+			if request.POST['is_fiction'] == 'on':
+				ldb.insert_book(str(request.POST['title']), "true")
+		except:
+			ldb.insert_book(str(request.POST['title']), "false")
+
+		ldb.insert_author(request.POST['af_name'], request.POST['al_name'], request.POST['af_name'] + ' ' + request.POST['al_name'], request.POST['pseudonym'])
+		
+		ldb.insert_book_author(Book.objects.first().book_id, Author.objects.first().author_id)
+
+		ldb.insert_edition(request.POST['title'], request.POST['isbn'], request.POST['pub_date'], request.POST['publisher'], request.POST['language'])
+
+		ldb.insert_editor(request.POST['title'], request.POST['editor_name'])
+		ldb.insert_genre(request.POST['title'], request.POST['genre'])
+
+		return HttpResponse("saved")
+
+
+
+
+@login_required
+def add_book_page(request):
+	bookg_form = BookGForm()
+	editor_form = EditorForm()
+	edition_form = EditionForm()
+	author_form = AuthorForm()
+	book_form = BookForm()
+	return render(request, 'add_book.html', {'book_form':book_form, 'bookg_form':bookg_form,'edition_form':edition_form,'editor_form':editor_form,  'author_form':author_form})
+
+
+def logreg(request):
+	user_form = UserForm()
+	return render(request, 'logreg.html', { 'user_form': user_form})
+
+def register(request):
+	if request.method == 'POST':
+		user_form = UserForm(data=request.POST)
+		if user_form.is_valid():
+			user = user_form.save()
+			user.set_password(user.password)
+			user.save()
+			username = request.POST['username']
+			password = request.POST['password']
+			user = authenticate(username=username, password=password)
+			login(request, user)
+			g = Group.objects.get(name='subscribed') 
+			g.user_set.add(user)
+			return HttpResponseRedirect('/home/')
+		else:
+			return HttpResponse(user_form.errors)
+
+def loger(request):
+	# Like before, obtain the context for the user's request.
+	# If the request is a HTTP POST, try to pull out the relevant information.
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(username=username, password=password)
+		if user:
+			print "here"
+			# Is the account active? It could have been disabled.
+			if user.is_active:
+
+			# If the account is valid and active, we can log the user in.
+			# We'll send the user back to the homepage.
+				login(request, user)
+				return HttpResponseRedirect('/home/')
+			else:
+			# An inactive account was used - no logging in!
+				return HttpResponse("account is disabled.")
+		else:
+			return HttpResponse("Incorrect username or password")
+
+@login_required
+def log_out(request):
+	logout(request)
+	return HttpResponseRedirect('/login/')
+
+def delete_book(request):
+	book_id = request.GET['client_response']
+	success = qf.delete_book(book_id)
+	if success:
+		d = {'server_response':'sucess'}
+		data = json.dumps(d)
+		return HttpResponse(data, mimetype='application/json')
+	else:
+		return HttpResponse('Failed')
+
+
+

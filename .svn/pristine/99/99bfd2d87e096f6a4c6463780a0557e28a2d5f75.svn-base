@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+{% endblock css %}
+
+
+{% block headline %}
+{% if user.is_authenticated %}
+<div id='welcome'>
+	<h1>Welcome, {{user}}</h1>
+	<p>Use the navigation at the top right-hand corner of the screen to move around book town. <br>
+	<img src= 'http://localhost/book-town.jpg' />
+	</p>
+</div>
+
+{% else %}
+<h1>Please register or sign in</h1>
+{% endif %}
+{% endblock headline %}
+
+
+
+
+{% block content %}
+
+{% endblock content %}

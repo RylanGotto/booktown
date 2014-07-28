@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+ul {
+	list-style-type: none;
+}
+
+.result_sec{
+	border:black 1pt solid;
+	margin:20px;
+	padding:10px;
+	border-radius:10pt;
+}
+
+.failed_search{
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#result{
+	margin-top:60px;
+}
+
+{% endblock css %}
+
+{% block headline %}
+<div id="result" >
+
+{% if result %}
+
+<div id="margining">
+<h1>Search Results for</h1>
+
+{% if genre %}
+<h2>Genre: {{genre}}</h2>
+{% endif %}
+
+{% if term %}
+<h2>{{term}}: {{search}}</h2>
+{% endif %}
+
+{% if lucky %}
+<h2>Feeling Lucky!</h2>
+{% endif %}
+
+{% for i in result %}
+<div class="result_sec">
+	<ul>
+		<li><b>Title: </b> {{i.title}}</li>
+		<li><b>Author: </b> {{i.author}}</li>
+		<li><b>Genre: </b>{{i.genre}}
+		<li><b>Pseudonym: </b> {{i.pseudonym}}</li>
+		<li><b>Language: </b> {{i.language}}</li>
+		<li><b>Date: </b> {{i.date}}</li>
+		<li><b>Publisher: </b> {{i.publisher}}</li>
+		<li><b>Editor :</b> {{i.editor}}</li>
+		<li><b>ISBN: </b> {{i.isbn}}</li>
+	</ul>
+</div>
+
+{% endfor %}
+</div>
+{% else %}
+
+<div class="failed_search">
+	<h1>Aww, I'm sorry your search sucks!</h1>
+	<img src="http://10.0.112.1/404.png" />
+</div>
+
+{% endif %}
+</div>
+{% endblock headline %}
+
+
+{% block content %}
+{% endblock content %}

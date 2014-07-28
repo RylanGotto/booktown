@@ -1,0 +1,150 @@
+    {% load staticfiles %}
+
+    html{
+      font-family: 'Open Sans Condensed', sans-serif;
+    }
+    body{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 15px;
+        margin-bottom: 150px;
+
+    }
+    h1{
+        font-family: 'Special Elite', cursive;
+        font-size: 50px;
+    }
+
+    h2{
+
+        font-size:40px;
+        padding-top:2px;
+        padding-bottom:2px;
+    }
+    h3{
+        font-size:20px;
+        font-family: 'Special Elite', cursive;
+        padding-bottom:3px;
+    }
+    .search_divs{
+      font-family: 'Open Sans Condensed', sans-serif;
+      padding-top: 10px;
+      
+    }
+
+  .navbar-inverse .navbar-nav > li > a {
+      color: yellow;
+  }
+
+
+    .btn{
+       border-top: 1px solid #96d1f8;
+       background: #65a9d7;
+       background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+       background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+       background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+       background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+       background: -o-linear-gradient(top, #3e779d, #65a9d7);
+       padding: 6px 12px;
+       margin:12px;
+       -webkit-border-radius: 10px;
+       -moz-border-radius: 8px;
+       border-radius: 8px;
+       -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+       -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+       box-shadow: rgba(0,0,0,1) 0 1px 0;
+       text-shadow: rgba(0,0,0,.4) 0 1px 0;
+       color: yellow;
+       font-size: 14px;
+       font-family: 'Special Elite', cursive;
+       text-decoration: none;
+       vertical-align: middle;
+       }
+    .btn:hover {
+       border-top-color: #28597a;
+       background: #28597a;
+       color: #ccc;
+       }
+    .btn:active {
+       border-top-color: #1b435e;
+       background: #1b435e;
+       }
+
+    }
+    .jumbotron{
+        background-image:url('images/backdrop.jpg');
+        border: 1pt #D1D1D1 solid;
+    }
+    .wrapper{
+        padding-bottom:15px;
+    }
+    .contact{
+        border-radius: 10px;
+        background-color:rgba(0,0,0,0.1);
+        color:white;
+    }
+    .contact h3{
+        color:#B5E853
+    }
+    #welcome{
+      margin-top: 100px
+    }
+
+    #social{
+        list-style-type:none;
+        font-size:15pt;
+    }
+    #contact_form input{
+        color:black;
+    }
+    #submit{
+        margin-bottom: 10px;
+    }
+    #contact_form label{
+        color:#B5E853;
+    }
+    #id_message{
+        color:black;
+    }
+    #intro{
+        color:white;
+    }
+    #login{
+        margin:10px;
+    }
+    #footer{
+        border-top:1pt solid yellow;
+        background-color: black;
+        font-size:25px;
+    }
+    #blog_desc{
+        border-bottom: 1pt #D1D1D1 solid;
+        margin-bottom: 45px;
+    }
+
+    #not_in{
+      margin-top: 65px;
+    }
+
+    #welcome {
+      text-align:center
+    }
+
+    #greeting{
+      text-align: center;
+    }
+
+    #book_form input[type="text"]{
+    border: 1px dotted #65a9d7;
+    position: absolute;
+    left: 170px;
+    width: 300px;
+
+  }
+
+    #book_form input[type='checkbox']{
+    border: 1px solid #65a9d7;
+    position: absolute;
+    left: 25px;
+    width: 300px;
+
+  }

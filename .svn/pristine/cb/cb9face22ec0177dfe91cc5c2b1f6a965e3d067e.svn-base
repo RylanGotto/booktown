@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+ul {
+	list-style-type: none;
+}
+
+.result_sec{
+	border:black 1pt solid;
+	margin:20px;
+	padding:10px;
+	border-radius:10pt;
+}
+
+.failed_search{
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#result{
+	margin-top:60px;
+}
+
+{% endblock css %}
+
+{% block headline %}
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$("#button").click(function() {
+		var input_string = $("#forminput").val();
+	$.ajax({
+		url : "/delete/",
+		type : "GET",
+		dataType: "json",
+		data : {
+			client_response: input_string
+		},
+			success : function(json) {
+				$('.result_sec').hide("slow");
+				$('#deleted').hide();
+				$('#deleted').text("The book has been deleted");
+				$('#deleted').show(2000);
+				
+				setTimeout(function(){window.location.replace("/search/")}, 1000);
+				
+
+			},
+				error : function(xhr,errmsg,err) {
+				alert(xhr.status + ": " + xhr.responseText);
+			}
+		});
+			return false;
+		});
+});
+
+</script>
+
+<div id="result" >
+
+{% if result %}
+
+<div id="margining">
+<h1>Search Results for</h1>
+
+{% if genre %}
+<h2>Genre: {{genre}}</h2>
+{% endif %}
+
+{% if term %}
+<h2>{{term}}: {{search}}</h2>
+{% endif %}
+
+{% if lucky %}
+<h2>Feeling Lucky!</h2>
+{% endif %}
+
+{% for i in result %}
+<div class="result_sec">
+	<ul>
+		<li><b>Title: </b> {{i.title}}</li>
+		<li><b>Author: </b> {{i.author}}</li>
+		<li><b>Author Pseudonym: </b> {{i.pseudonym}}</li>
+		<li><b>Genre: </b>{{i.genre}}
+		<li><b>Publisher: </b> {{i.language}}</li>
+		<li><b>Date: </b> {{i.date}}</li>
+		<li><b>Language: </b> {{i.publisher}}</li>
+		<li><b>Editor :</b> {{i.editor}}</li>
+		<li><b>ISBN: </b> {{i.isbn}}</li>
+
+		{% if user.is_staff %}
+		<form>
+		<input type="submit"  value="delete" id="button" class="btn btn-default" />
+		<input type="hidden" id="forminput" name="delete" value="{{i.book_id}}" />
+		</form>
+		{%endif%}
+
+	</ul>
+</div>
+<div >
+	<h1 id="deleted"></h1>
+</div>
+
+{% endfor %}
+</div>
+{% else %}
+
+<div class="failed_search">
+	<h1>Aww, I'm sorry your search sucks!</h1>
+	<img src="http://10.0.112.1/404.png" />
+</div>
+
+{% endif %}
+</div>
+{% endblock headline %}
+
+
+{% block content %}
+{% endblock content %}

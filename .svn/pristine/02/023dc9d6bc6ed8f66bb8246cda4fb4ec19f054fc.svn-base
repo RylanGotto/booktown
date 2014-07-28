@@ -1,0 +1,82 @@
+Mon, 07 Jul 2014 15:42:44 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:42:44 INFO     ['title', 'is_fiction']
+Mon, 07 Jul 2014 15:42:44 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:42:44 INFO     ['af_name', 'al_name']
+Mon, 07 Jul 2014 15:42:44 WARNING  <ul class="errorlist"><li>book_id<ul class="errorlist"><li>Select a valid choice. 18 is not one of the available choices.</li></ul></li></ul>
+Mon, 07 Jul 2014 15:42:44 WARNING  <ul class="errorlist"><li>book_id<ul class="errorlist"><li>Select a valid choice. 18 is not one of the available choices.</li></ul></li></ul>
+Mon, 07 Jul 2014 15:42:44 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:42:44 INFO     ['author_id', 'pseudonym']
+Mon, 07 Jul 2014 15:46:21 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:46:21 INFO     ['title']
+Mon, 07 Jul 2014 15:46:21 WARNING  <ul class="errorlist"><li>al_name<ul class="errorlist"><li>This field is required.</li></ul></li><li>af_name<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+Mon, 07 Jul 2014 15:46:21 WARNING  <ul class="errorlist"><li>genre<ul class="errorlist"><li>This field is required.</li></ul></li><li>book_id<ul class="errorlist"><li>Select a valid choice. 19 is not one of the available choices.</li></ul></li></ul>
+Mon, 07 Jul 2014 15:46:21 WARNING  <ul class="errorlist"><li>pub_date<ul class="errorlist"><li>This field is required.</li></ul></li><li>isbn<ul class="errorlist"><li>This field is required.</li></ul></li><li>language<ul class="errorlist"><li>This field is required.</li></ul></li><li>book_id<ul class="errorlist"><li>Select a valid choice. 19 is not one of the available choices.</li></ul></li><li>publisher<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+Mon, 07 Jul 2014 15:46:21 WARNING  <ul class="errorlist"><li>pseudonym<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+Mon, 07 Jul 2014 15:46:50 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:46:50 INFO     ['title', 'is_fiction']
+Mon, 07 Jul 2014 15:46:50 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:46:50 INFO     ['af_name', 'al_name']
+Mon, 07 Jul 2014 15:46:50 WARNING  <ul class="errorlist"><li>book_id<ul class="errorlist"><li>Select a valid choice. 20 is not one of the available choices.</li></ul></li></ul>
+Mon, 07 Jul 2014 15:46:50 WARNING  <ul class="errorlist"><li>book_id<ul class="errorlist"><li>Select a valid choice. 20 is not one of the available choices.</li></ul></li></ul>
+Mon, 07 Jul 2014 15:46:50 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:46:50 INFO     ['author_id', 'pseudonym']
+Mon, 07 Jul 2014 15:56:54 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:56:54 INFO     ['title', 'is_fiction']
+Mon, 07 Jul 2014 15:56:55 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:56:55 INFO     ['af_name', 'al_name']
+Mon, 07 Jul 2014 15:56:55 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:56:55 INFO     ['book_id', 'genre']
+Mon, 07 Jul 2014 15:56:55 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:56:55 INFO     ['book_id', 'isbn', 'pub_date', 'publisher', 'language']
+Mon, 07 Jul 2014 15:56:55 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 15:56:55 INFO     ['author_id', 'pseudonym']
+Mon, 07 Jul 2014 16:09:44 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:09:44 INFO     ['title', 'is_fiction']
+Mon, 07 Jul 2014 16:09:44 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:09:44 INFO     ['af_name', 'al_name']
+Mon, 07 Jul 2014 16:09:44 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:09:44 INFO     ['book_id', 'genre']
+Mon, 07 Jul 2014 16:09:44 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:09:44 INFO     ['book_id', 'isbn', 'pub_date', 'publisher', 'language']
+Mon, 07 Jul 2014 16:09:44 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:09:44 INFO     ['author_id', 'pseudonym']
+Mon, 07 Jul 2014 16:12:35 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:12:35 INFO     ['title']
+Mon, 07 Jul 2014 16:12:35 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:12:35 INFO     ['af_name', 'al_name']
+Mon, 07 Jul 2014 16:12:35 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:12:35 INFO     ['book_id', 'genre']
+Mon, 07 Jul 2014 16:12:35 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:12:35 INFO     ['book_id', 'isbn', 'pub_date', 'publisher', 'language']
+Mon, 07 Jul 2014 16:12:35 INFO     The follow fields were added (See line below):
+Mon, 07 Jul 2014 16:12:35 INFO     ['author_id', 'pseudonym']
+Tue, 08 Jul 2014 22:10:28 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:330: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+
+Mon, 14 Jul 2014 15:33:18 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:330: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+
+Tue, 15 Jul 2014 20:44:40 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:330: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+
+Tue, 15 Jul 2014 20:48:24 WARNING  /usr/lib/python2.7/wsgiref/handlers.py:127: DeprecationWarning: Creating streaming responses with `HttpResponse` is deprecated. Use `StreamingHttpResponse` instead if you need the streaming behavior.
+  for data in self.result:
+
+Fri, 25 Jul 2014 20:50:46 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:327: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+
+Fri, 25 Jul 2014 21:01:17 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:327: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+
+Fri, 25 Jul 2014 21:03:28 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:327: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+
+Fri, 25 Jul 2014 21:27:48 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:327: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+
+Fri, 25 Jul 2014 21:29:20 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:327: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+
+Fri, 25 Jul 2014 22:53:59 WARNING  /usr/local/lib/python2.7/dist-packages/django/http/response.py:327: DeprecationWarning: Using mimetype keyword argument is deprecated, use content_type instead
+  super(HttpResponse, self).__init__(*args, **kwargs)
+

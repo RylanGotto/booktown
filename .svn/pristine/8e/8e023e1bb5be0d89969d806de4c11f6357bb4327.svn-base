@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css %}
+
+#search{
+	margin-top:60px;
+}
+
+{% endblock css %}
+
+{% block headline %}
+
+{% if user.is_authenticated %}
+<div class="container" id="search">
+	<div id="greeting">
+	<img src="{% static 'images/book.png' %}" alt="book" height='175'/>
+
+		<h1>Greetings Earthlings!<br></h1>
+		<h2> Welcome to the wicked book search engine</h2><br>
+		<h3>Please enter your search terms and we will return some wicked books
+		</h3> 
+	</div>
+
+</div>
+<div class="search_divs" name="various">
+
+	<form class="search_form" name="input" action="/results/" method="get">
+	<input type="hidden" name="type_is" value="1">
+
+		<div class="ui-widget" style="margin-top:2em; font-family: 'Special Elite', sans-serif">
+			<label for="tit">Title: </label>
+			<input id="tit">
+		
+			<label for="auth">Author: </label>
+			<input id="auth">
+			
+			<label for="pub">Publisher: </label>
+			<input id="pub">
+		</div>
+
+</div>
+
+<div class="search_divs" id="genre">
+	<form class="search_form" name="genresearch" action="/results/" method="get">	
+	<input type="hidden" name="type_is" value="2">
+	<legend>Search by genre</legend>
+		<select class="btn btn-primary" tabindex="4" name="genre">
+			{% for i in genrelist %}
+				<option>{{i.genre}}</option>
+			{% endfor %}
+			
+		</select>
+		<input tabindex="5" type="submit" class="btn btn-primary"><br>
+	</form>			
+
+
+	<div id="lucky">
+		<form class="search_form" name="luckysearch" action="/results/" method="get">	
+		<input type="hidden" name="type_is" value="3">
+		<legend>Feelin lucky?</legend>
+			<input type="submit" value="Get random book" name="lucky" class="btn btn-primary">
+		</form> 
+	</div>
+</div>
+
+
+	{% else %}
+	<div id = 'not_in'>
+	<h1>You are not signed in, do you have an account? </h1>
+	<a href="/login/">Click here to login or register!</a>
+	</div>
+	{% endif %}
+
+
+{% endblock headline %}
+
+
+{% block content %}
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+<script>
+$(function() {
+	function log( message ) {
+		$( "<div>" ).text( message ).prependTo( "#log" );
+		$( "#log" ).scrollTop( 0 );
+	}
+	$( "#tit" ).autocomplete({
+	source: "/autocomplete/",
+	minLength: 2,
+
+	select: function( event, ui ) {
+	log( ui.item ?
+	"Selected: " + ui.item.value + " aka " + ui.item.id :
+	"Nothing selected, input was " + this.value );
+	}
+});
+</script>
+
+{% endblock content %}
+
