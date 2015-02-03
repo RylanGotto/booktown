@@ -6,11 +6,10 @@ import loaddb as ldb
 from django.shortcuts import render
 from book_search.models import BookGenre
 import queryfuncs as qf
-from forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
-from models import *
+
 
 import logging
 import json
